@@ -5,11 +5,11 @@ import (
 	"unsafe"
 )
 
-func Getwd(buf []byte, size int) (int, error) {
+func Getwd(buf []byte) (int, error) {
 	cwd, _, err := syscall.Syscall(
 		uintptr(SYS_GETCWD),
 		uintptr(unsafe.Pointer(&buf[0])),
-		uintptr(size),
+		uintptr(len(buf),
 		0,
 	)
 	if err != 0 {
