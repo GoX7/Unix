@@ -27,45 +27,6 @@ go get github.com/gox7/unix
 
 ---
 
-## 📋 Example
-
-```go
-package main
-
-import (
-    "log"
-    "fmt"
-    "github.com/gox7/unix"
-)
-
-func main() {
-    // Create TCP socket
-    fd, err := unix.Socket(unix.AF_INET, unix.SOCK_STREAM, 0)
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer unix.Close(fd)
-
-    // Bind & listen
-    unix.Bind(fd, unix.AF_INET, [4]int{127, 0, 0, 1}, 8080)
-    unix.Listen(fd, 10)
-
-    // Accept loop
-    for {
-        clientFD, err := unix.Accept(fd, [16]byte{})
-        if err != nil {
-            log.Println("accept error:", err)
-            continue
-        }
-        unix.Write(clientFD, []byte("hi\n"))
-        fmt.Printf("Sent greeting to fd %d\n", clientFD)
-        unix.Close(clientFD)
-    }
-}
-```
-
----
-
 ## ⚠️ Disclaimer
 
 > Unsafe. Raw syscalls. For advanced use only.
