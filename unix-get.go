@@ -9,7 +9,7 @@ func Getwd(buf []byte) (int, error) {
 	cwd, _, err := syscall.Syscall(
 		uintptr(SYS_GETCWD),
 		uintptr(unsafe.Pointer(&buf[0])),
-		uintptr(len(buf),
+		uintptr(len(buf)),
 		0,
 	)
 	if err != 0 {
