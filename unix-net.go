@@ -20,7 +20,7 @@ func Socket(domain int, stype int, protocol int) (int, error) {
 }
 
 // Create connect ip4 for bind
-func SockAddrInet4(host [4]int, port int) [16]byte {
+func SockAddrInet4(host [4]byte, port int) [16]byte {
 	var connect [16]byte
 	connect[0] = byte(AF_INET)
 	connect[2] = byte(port >> 8)
@@ -71,6 +71,7 @@ func Listen(fd int, backlog int) error {
 	return nil
 }
 
+// Connect to socket
 func Connect(fd int, addr []byte) error {
 	_, _, err := syscall.Syscall(
 		uintptr(SYS_CONNECT),
