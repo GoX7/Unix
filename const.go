@@ -1,8 +1,8 @@
 package unix
 
 const (
-	CODE_INPUT  = 0
-	CODE_OUTPUT = 1
+	CODE_STDIN  = 0 // stdin
+	CODE_STDOUT = 1 // stdout
 
 	PROT_NONE  = 0x0
 	PROT_READ  = 0x1
@@ -16,12 +16,12 @@ const (
 	MAP_LOCK    = 0x0200
 	MAP_STACK   = 0x20000
 
-	AF_UNIX  = 1
-	AF_INET  = 2
-	AF_INET6 = 10
+	AF_UNIX  = 1  // locale
+	AF_INET  = 2  // IPV4
+	AF_INET6 = 10 // IPV6
 
-	SOCK_STREAM = 1
-	SOCK_DGRAM  = 2
+	SOCK_STREAM = 1 // UDP
+	SOCK_DGRAM  = 2 // TCP
 
 	SYS_READ     = 0
 	SYS_WRITE    = 1
@@ -33,6 +33,7 @@ const (
 	SYS_MUNMAP   = 11
 	SYS_PIPE     = 22
 	SYS_PAUSE    = 34
+	SYS_CONNECT  = 42
 	SYS_GETPID   = 39
 	SYS_SOCKET   = 41
 	SYS_ACCEPT   = 43
@@ -57,7 +58,7 @@ const (
 
 	O_RDONLY  = 0
 	O_WRONLY  = 1
-	O_RDWR    = 2
+	O_RDWR    = 2 // write and read
 	O_ACCMODE = 3
 	O_CREATE  = 64
 	O_EXCL    = 128
