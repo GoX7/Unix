@@ -20,8 +20,8 @@ const (
 	AF_INET  = 2  // IPV4
 	AF_INET6 = 10 // IPV6
 
-	SOCK_STREAM = 1 // UDP
-	SOCK_DGRAM  = 2 // TCP
+	SOCK_STREAM = 1 // TCP
+	SOCK_DGRAM  = 2 // UDP
 
 	SYS_READ     = 0
 	SYS_WRITE    = 1
