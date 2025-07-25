@@ -1,0 +1,69 @@
+package unix
+
+const (
+	CODE_INPUT  = 0
+	CODE_OUTPUT = 1
+
+	PROT_NONE  = 0x0
+	PROT_READ  = 0x1
+	PROT_WRITE = 0x2
+	PROT_EXEC  = 0x4
+
+	MAP_SHARE   = 0x1
+	MAP_PRIVATE = 0x02
+	MAP_FIXED   = 0x10
+	MAP_ANON    = 0x20
+	MAP_LOCK    = 0x0200
+	MAP_STACK   = 0x20000
+
+	AF_UNIX  = 1
+	AF_INET  = 2
+	AF_INET6 = 10
+
+	SOCK_STREAM = 1
+	SOCK_DGRAM  = 2
+
+	SYS_READ     = 0
+	SYS_WRITE    = 1
+	SYS_OPEN     = 2
+	SYS_CLOSE    = 3
+	SYS_STAT     = 4
+	SYS_POLL     = 7
+	SYS_MMAP     = 9
+	SYS_MUNMAP   = 11
+	SYS_PIPE     = 22
+	SYS_PAUSE    = 34
+	SYS_GETPID   = 39
+	SYS_SOCKET   = 41
+	SYS_ACCEPT   = 43
+	SYS_SHUTDOWN = 48
+	SYS_BIND     = 49
+	SYS_LISTEN   = 50
+	SYS_FORK     = 57
+	SYS_EXIT     = 60
+	SYS_GETCWD   = 79
+	SYS_CHDIR    = 80
+	SYS_FCHDIR   = 81
+	SYS_RENAME   = 82
+	SYS_MKDIR    = 83
+	SYS_RMDIR    = 84
+	SYS_GETUID   = 102
+	SYS_GETGID   = 104
+	SYS_GETEUID  = 107
+	SYS_SYNC     = 162
+	SYS_OPENAT   = 257
+	SYS_NEWFSTAT = 262
+	SYS_GETCPU   = 309
+
+	O_RDONLY  = 0
+	O_WRONLY  = 1
+	O_RDWR    = 2
+	O_ACCMODE = 3
+	O_CREATE  = 64
+	O_EXCL    = 128
+	O_APPEND  = 1024
+)
+
+var (
+	AT_FDCWD = -100
+)
