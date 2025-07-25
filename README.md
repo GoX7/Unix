@@ -10,12 +10,12 @@ Direct access to `syscall.Syscall`—no abstractions, no dependencies.
 
 ## 🛠️ Features
 
-| Base Operations                  | Low‑level Operations      | Networking          |
-| -------------------------------- | ------------------------- | ------------------- |
-| `Write` / `Read`                 | `Mmap` / `Munmap`         | `Socket`            |
-| `Open` / `Openat` / `Stat`       | `Pipe` / `Fork` / `Sync`  | `Bind` / `Listen`   |
-| `Mkdir` / `Rmdir` / `Chdir`      |                           | `Accept`            |
-| `Pause` / `Close` / `Exit` / `Shutdown` |                   |                     |
+| Base Operations                 |System information  | Low‑level Operations      | Networking          |
+| --------------------------------|--------------------| ------------------------- | ------------------- |
+| `Write` / `Read`                | `getuid`/`geteuid` | `Mmap` / `Munmap`         | `Socket`            |
+| `Open` / `Openat` / `Stat`      | `getwd`            | `Pipe` / `Fork` / `Sync`  | `Bind` / `Listen`   |
+| `Mkdir` / `Rmdir` / `Chdir`     | `getpid`           |                           | `Accept`            |
+| `Pause` / `Close` / `Exit` / `Shutdown` |            |                           |                     |
 
 ---
 
